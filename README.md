@@ -46,8 +46,8 @@ ngrok會給一組隨機的httpxxxxx &amp; https xxxxxx 對應到本機localhost:
 [Ngrok的操作連結在此](https://onmyvie.tumblr.com/post/170107008915/ngrok-%E8%AE%93%E6%9C%AC%E6%A9%9F%E4%B9%9F%E5%8F%AF%E4%BB%A5%E9%96%8B%E7%99%BC-webhook-%E5%85%8D%E9%83%A8%E7%BD%B2%E7%92%B0%E5%A2%83%E7%9A%84%E7%A5%9E%E5%99%A8)
 
 將Nogrol的網址設定跟localhost同個post，我這邊是設定5000(Flask預設)，複製nogrok產生的https的連結
-![image](https://78.media.tumblr.com/fafa29f36d3b046feb985ee699128639/tumblr_inline_p33r22HBy41uiyw8m_540.jpg)
-
+連結後面要加上/callback
+![image](https://78.media.tumblr.com/1276fe74e8231c99eb5fbd30f3283b66/tumblr_inline_p33tob7M4K1uiyw8m_540.jpg)
 貼在line&nbsp;developers設定頁面
 ![image](https://78.media.tumblr.com/553d44b12aaf5082cf8fd8302f49d5d1/tumblr_inline_p33r49w3Dk1uiyw8m_540.jpg)
 
