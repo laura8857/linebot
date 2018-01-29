@@ -23,7 +23,7 @@ def get_web_page(url):
 
 
 def get_articles(dom):
-    no_reply = ["沒啥有趣的","今天休假","小柴我不想說","罷工罷工"]
+    no_reply = ["沒啥有趣的","今天休假","小柴我不想說","罷工罷工","蹲角落（畫圈圈","讓我先睡一下zZZ","蛤～你說什麼"]
     soup = BeautifulSoup(dom, 'html.parser')
 
     # 取得上一頁的連結
@@ -63,7 +63,7 @@ def get_articles(dom):
     if len(articles)>0:
         return articles
     else:
-        count = random.randint(0,3)
+        count = random.randint(0,len(no_reply)-1)
         # print(count)
         return no_reply[count]
 

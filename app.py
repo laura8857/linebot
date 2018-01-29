@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from flask import Flask, request, abort
 import random
 from linebot import (
@@ -12,10 +13,13 @@ from linebot.models import (
     URITemplateAction)
 from linebot import LineBotApi
 import json
+import re
 
 
 from crawl import get_web_page
 from conf import configuration
+from get_train import get_train
+import dateutil.parser as dparser
 
 
 
@@ -60,6 +64,34 @@ def callback():
 def handle_message(event):
     print("event.reply_token:", event.reply_token)
     print("event.message.text:", event.message.text)
+
+    if "火車" in event.message.text:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text='請輸入:起站/終站/年/月/日' + '\n(例如：台北/台東/2018/1/1)'))
+        return 0
+
+    pattern = re.compile(r'^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$')
+    test = None
+    # try:
+    test = dparser.parse(event.message.text, fuzzy=True)
+    if test is not None:
+        message = event.message.text
+        if len(message.split("/")) ==5:
+            date = message.split("/")[2]+'/'+message.split("/")[3]+'/'+message.split("/")[4]
+            content = want_train(message.split("/")[0],message.split("/")[1],date)
+        else:
+            content = "請輸入正確的查詢格式\n起站/終站/年/月/日\n(例如：台北/台東/2018/1/1)"
+        print(content)
+
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+        return 0
+
+    # except Exception:
+    #     print(Exception)
+
     if event.message.text == "網球":
         content = tennis()
         line_bot_api.reply_message(
@@ -157,6 +189,21 @@ def today_eat():
 
         return content
 
+def want_train(origin,destination,date):
+    isformat,train_list = get_train(origin,destination,date)
 
+    if isformat:
+        content = origin+'-'+destination+' 火車時刻表\n'
+        content += '-'*25 +'\n'
+
+        for item in train_list:
+            content +=\
+                "火車編號:"+ item['train_NO']+'\n火車種類:'+item['train_type']+'\n起站-終站:'+item['origin_station']+'-'\
+                +item['destination_station']+'\n起站出發時間:'+item['origin_departure_time']+'\n終站抵達時間:'\
+                +item['destination_arrival_time']+'\n'+'-'*25+'\n'
+    else:
+        content = train_list
+
+    return content
 if __name__ == "__main__":
     app.run()
