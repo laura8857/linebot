@@ -10,17 +10,17 @@ from linebot.exceptions import (
 from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
     ImageSendMessage, TemplateSendMessage, ButtonsTemplate, MessageTemplateAction,
-    URITemplateAction)
+    URITemplateAction, ImageCarouselTemplate, ImageCarouselColumn, PostbackTemplateAction)
 from linebot import LineBotApi
 import json
 import re
-
+import dateutil.parser as dparser
+import time
 
 from crawl import get_web_page
 from conf import configuration
 from get_train import get_train
-import dateutil.parser as dparser
-
+from get_movie import get_web_page_movie,get_top_movie
 
 
 app = Flask(__name__)
@@ -53,6 +53,7 @@ def callback():
     # handle webhook body
     try:
         handler.handle(body, signature)
+        # events = parser.parse(body, signature)
     except InvalidSignatureError:
         abort(400)
 
@@ -73,24 +74,24 @@ def handle_message(event):
 
     pattern = re.compile(r'^([0-9]{4})[./]{1}([0-9]{1,2})[./]{1}([0-9]{1,2})$')
     test = None
-    # try:
-    test = dparser.parse(event.message.text, fuzzy=True)
-    if test is not None:
-        message = event.message.text
-        if len(message.split("/")) ==5:
-            date = message.split("/")[2]+'/'+message.split("/")[3]+'/'+message.split("/")[4]
-            content = want_train(message.split("/")[0],message.split("/")[1],date)
-        else:
-            content = "請輸入正確的查詢格式\n起站/終站/年/月/日\n(例如：台北/台東/2018/1/1)"
-        print(content)
+    try:
+        test = dparser.parse(event.message.text, fuzzy=True)
+        if test is not None:
+            message = event.message.text
+            if len(message.split("/")) ==5:
+                date = message.split("/")[2]+'/'+message.split("/")[3]+'/'+message.split("/")[4]
+                content = want_train(message.split("/")[0],message.split("/")[1],date)
+            else:
+                content = "請輸入正確的查詢格式\n起站/終站/年/月/日\n(例如：台北/台東/2018/1/1)"
+            print(content)
 
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=content))
-        return 0
+            line_bot_api.reply_message(
+                event.reply_token,
+                TextSendMessage(text=content))
+            return 0
 
-    # except Exception:
-    #     print(Exception)
+    except Exception:
+        print(Exception)
 
     if event.message.text == "網球":
         content = tennis()
@@ -119,6 +120,57 @@ def handle_message(event):
         return 0
     elif event.message.text =="今天吃什麼":
         content = today_eat()
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+
+        return 0
+    elif event.message.text=="電影大小事":
+        message = TemplateSendMessage(
+            alt_text='Buttons template',
+            template=ButtonsTemplate(
+                thumbnail_image_url='https://instagram.ftpe8-3.fna.fbcdn.net/vp/4d14673bbc73f804285d8587fee67444/5B08EF3D/t51.2885-15/e15/10852686_1609466372614592_1128590266_n.jpg',
+                title='柴看看',
+                text='黑柴電影閒聊',
+                actions=[
+                    MessageTemplateAction(
+                        label='天龍黑柴看電影',
+                        text='台北票房榜',
+                    ),
+                    MessageTemplateAction(
+                        label='美國黑柴see movie',
+                        text='全美票房榜',
+                    ),
+                    MessageTemplateAction(
+                        label='黑柴的預告',
+                        text='預告片排行榜',
+                    ),
+                    # MessageTemplateAction(
+                    #     label='黑柴的餓了',
+                    #     text='今天吃什麼',
+                    # ),
+                ]
+            )
+        )
+        line_bot_api.reply_message(event.reply_token, message)
+        return 0
+
+    elif event.message.text == "台北票房榜":
+        content = want_movie('台北票房榜')
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+
+        return 0
+    elif event.message.text == "全美票房榜":
+        content = want_movie('全美票房榜')
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text=content))
+
+        return 0
+    elif event.message.text == "預告片排行榜":
+        content = want_movie('預告片排行榜')
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text=content))
@@ -159,10 +211,11 @@ def handle_message(event):
             )
         )
         line_bot_api.reply_message(event.reply_token, message)
+        return 0
 
 def tennis():
     target_url = 'https://www.ptt.cc/bbs/Tennis/index.html'
-    print('Start tesnnis....')
+    print('Start tennis....')
 
     content = get_web_page(target_url)
     print(content)
@@ -205,5 +258,68 @@ def want_train(origin,destination,date):
         content = train_list
 
     return content
+
+def want_movie(area):
+    content_taipei ='台北票房榜\n'+'-'*30
+    content_america ='全美票房榜\n'+'-'*30
+    content_not_on ='預告片榜\n'+'-'*30
+
+    current_page = None
+    current_page = get_web_page_movie('https://movies.yahoo.com.tw/')
+
+    if current_page:
+        top_movie = get_top_movie(current_page)
+
+
+        for movie in top_movie:
+
+                if movie['area'] =='電影排行榜_台北票房榜':
+                    content_taipei +=movie['movie']+'\n電影類別:'
+
+                    for style in movie['style']:
+                        content_taipei+=style+','
+                    content_taipei += '\n上映時間:' + movie['date'] + '\n電影長度:' + movie['length']+'\n評分:'+movie['score']+'/5'+'\n'
+
+                    # for actor in movie['actor']:
+                    #     content_taipei +=actor+','
+                    content_taipei +='\n'+movie['url']+'\n'+'-'*25+'\n'
+                elif movie['area'] =='電影排行榜_全美票房榜':
+                    content_america += movie['movie'] + '\n電影類別:'
+
+                    for style in movie['style']:
+                        content_america += style + ','
+                    content_america += '\n上映時間:' + movie['date'] + '\n電影長度:' + movie['length'] + '\n評分:' + movie['score']+ '/5' + '\n'
+
+                    # for actor in movie['actor']:
+                    #     content_america += actor + ','
+                    content_america += '\n' + movie['url']+'\n'+'-'*25+'\n'
+                elif movie['area'] =='電影排行榜_預告片榜':
+                    content_not_on += movie['movie'] + '\n電影類別:'
+
+                    for style in movie['style']:
+                        content_not_on += style + ','
+                    content_not_on += '\n上映時間:' + movie['date'] + '\n電影長度:' + movie['length'] + '\n評分:' + movie['score']+ '/5' + '\n'
+
+                    # for actor in movie['actor']:
+                    #     content_not_on += actor + ','
+                    content_not_on += '\n' + movie['url']+'\n'+'-'*25+'\n'
+                else:
+                    content_taipei += 'Something Error.'
+                    content_america = 'Something Error.'
+                    content_not_on = 'Something Error.'
+
+
+
+    if area == "台北票房榜":
+        return content_taipei
+    elif area =="全美票房榜":
+        return content_america
+    elif area == "預告片排行榜":
+        return content_not_on
+    else:
+        return "Something Error."
+
+
+
 if __name__ == "__main__":
     app.run()

@@ -1,0 +1,370 @@
+[
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "02時22分",
+    "movie": "移動迷宮：死亡解藥",
+    "score": "3.9",
+    "style": [
+      "科幻",
+      "劇情",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7300"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2017-12-22",
+    "last_date": "2018-02-04",
+    "length": "02時20分",
+    "movie": "與神同行",
+    "score": "4.5",
+    "style": [
+      "動作",
+      "奇幻",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7487"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-26",
+    "last_date": "2018-02-04",
+    "length": "02時16分",
+    "movie": "縮小人生",
+    "score": "2.5",
+    "style": [
+      "劇情",
+      "喜劇"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7222"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "02時10分",
+    "movie": "12猛漢",
+    "score": "4.3",
+    "style": [
+      "戰爭",
+      "歷史/傳記",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7495"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-12",
+    "last_date": "2018-02-04",
+    "length": "01時45分",
+    "movie": "疾速救援",
+    "score": "4.4",
+    "style": [
+      "動作",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7608"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-26",
+    "last_date": "2018-02-04",
+    "length": "01時26分",
+    "movie": "魍美",
+    "score": "4.1",
+    "style": [
+      "恐怖",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7605"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2017-12-20",
+    "last_date": "2018-02-04",
+    "length": "01時45分",
+    "movie": "大娛樂家",
+    "score": "4.7",
+    "style": [
+      "音樂/歌舞",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=6981"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2017-12-27",
+    "last_date": "2018-02-04",
+    "length": "01時59分",
+    "movie": "野蠻遊戲：瘋狂叢林",
+    "score": "4.2",
+    "style": [
+      "動作",
+      "冒險",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7274"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "01時44分",
+    "movie": "大災難家",
+    "score": "4.3",
+    "style": [
+      "喜劇"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7566"
+  },
+  {
+    "area": "電影排行榜_台北票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "02時00分",
+    "movie": "FATE/STAY NIGHT [HEAVEN",
+    "score": "4.1",
+    "style": [
+      "動畫"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7428"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "02時22分",
+    "movie": "移動迷宮：死亡解藥",
+    "score": "3.9",
+    "style": [
+      "科幻",
+      "劇情",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7300"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2017-12-27",
+    "last_date": "2018-02-04",
+    "length": "01時59分",
+    "movie": "野蠻遊戲：瘋狂叢林",
+    "score": "4.2",
+    "style": [
+      "動作",
+      "冒險",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7274"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2017-12-20",
+    "last_date": "2018-02-04",
+    "length": "01時45分",
+    "movie": "大娛樂家",
+    "score": "4.7",
+    "style": [
+      "音樂/歌舞",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=6981"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2018-02-23",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "郵報：密戰",
+    "score": "0",
+    "style": [
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7479"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2018-01-19",
+    "last_date": "2018-02-04",
+    "length": "02時10分",
+    "movie": "12猛漢",
+    "score": "4.3",
+    "style": [
+      "戰爭",
+      "歷史/傳記",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7495"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2018-03-16",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "極盜戰",
+    "score": "0",
+    "style": [
+      "動作",
+      "犯罪",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7687"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2018-02-14",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "水底情深",
+    "score": "4.6",
+    "style": [
+      "冒險",
+      "奇幻",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7328"
+  },
+  {
+    "area": "電影排行榜_全美票房榜",
+    "date": "2017-12-01",
+    "last_date": "2018-02-04",
+    "length": "01時44分",
+    "movie": "柏靈頓熊熊出任務",
+    "score": "4.1",
+    "style": [
+      "動畫",
+      "喜劇"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=6975"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-01-26",
+    "last_date": "2018-02-04",
+    "length": "02時00分",
+    "movie": "老娘叫譚雅",
+    "score": "4.1",
+    "style": [
+      "劇情",
+      "喜劇"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7614"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-02",
+    "last_date": "2018-02-04",
+    "length": "02時13分",
+    "movie": "金錢世界",
+    "score": "4.1",
+    "style": [
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7293"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-14",
+    "last_date": "2018-02-04",
+    "length": "02時06分",
+    "movie": "角頭2：王者再起",
+    "score": "0",
+    "style": [
+      "動作",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7517"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-13",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "黑豹",
+    "score": "0",
+    "style": [
+      "動作",
+      "奇幻"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=6953"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-14",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "西遊記：女兒國",
+    "score": "0",
+    "style": [
+      "奇幻",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7028"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-01-26",
+    "last_date": "2018-02-04",
+    "length": "01時26分",
+    "movie": "魍美",
+    "score": "4.1",
+    "style": [
+      "恐怖",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7605"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-01-26",
+    "last_date": "2018-02-04",
+    "length": "02時16分",
+    "movie": "縮小人生",
+    "score": "2.5",
+    "style": [
+      "劇情",
+      "喜劇"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7222"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-02",
+    "last_date": "2018-02-04",
+    "length": "02時20分",
+    "movie": "決勝女王",
+    "score": "4.4",
+    "style": [
+      "歷史/傳記",
+      "劇情"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7528"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-02",
+    "last_date": "2018-02-04",
+    "length": "01時39分",
+    "movie": "溫徹斯特鬼屋",
+    "score": "4.6",
+    "style": [
+      "恐怖",
+      "懸疑/驚悚"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=7622"
+  },
+  {
+    "area": "電影排行榜_預告片榜",
+    "date": "2018-02-15",
+    "last_date": "2018-02-04",
+    "length": "未提供",
+    "movie": "萌牛費迪南",
+    "score": "0",
+    "style": [
+      "動畫"
+    ],
+    "url": "https://movies.yahoo.com.tw/movieinfo_main.html/id=6960"
+  }
+]
