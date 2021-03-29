@@ -55,7 +55,7 @@ protobuf==3.0.0
 psycopg2==2.7.3.1
 ptyprocess==0.5.2
 pygame==1.9.3
-Pygments==2.2.0
+Pygments==2.7.4
 pymongo==3.4.0
 PyMySQL==0.7.11
 pyparsing==2.2.0
